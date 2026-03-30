@@ -37,9 +37,17 @@ namespace Polygon___Properties
 
         public double duzina()
         {
-            Tacka A = this.Centriraj();
+            Tacka A = Centriraj();
             double duzina = A.d();
             return duzina;
+        }
+
+        public static bool sekuSe(Vektor a, Vektor b)
+        {
+            int a_b = Ravan.SIS(a, b.pocetak, b.kraj);
+            int b_a = Ravan.SIS(b, a.pocetak, a.kraj);
+            if (a_b != 0 && b_a != 0) return true;
+            else return false;
         }
     }
 }

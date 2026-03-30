@@ -95,6 +95,35 @@ namespace Polygon___Properties
 
         public bool prost()
         {
+            for (int i = 0; i < br_temena - 1; i++)
+            {
+                for (int j = i + 1; j < br_temena; j++)
+                {
+                    if (Tacka.jednaka(teme[i], teme[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            Vektor[] stranica = new Vektor[br_temena];
+            for (int i = 0; i < br_temena - 1; i++)
+            {
+                stranica[i] = new Vektor(teme[i], teme[i + 1]);
+            }
+            stranica[br_temena - 1] = new Vektor(teme[br_temena - 1], teme[0]);
+            for (int i = 0; i < br_temena; i++)
+            {
+                int kraj;
+                if (i == 0) kraj = br_temena - 1;
+                else kraj = br_temena;
+                for (int j = i + 2; j < kraj; j++)
+                {
+                    if (Vektor.sekuSe(stranica[i], stranica[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
             return true;
         }
     }

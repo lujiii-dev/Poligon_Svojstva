@@ -26,5 +26,10 @@ namespace Polygon___Properties
         {
             return Math.Sqrt(x * x + y * y);
         }
+
+        public static bool jednaka(Tacka A, Tacka B)
+        {
+            return (A.x == B.x) & (A.y == B.y);
+        }
     }
 }
