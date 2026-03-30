@@ -79,9 +79,23 @@ namespace Polygon___Properties
             return aC.x + bC.y - bC.x + aC.y;
         }
 
-        public float obim()
+        public double obim()
         {
-            for (int i = 0)
+            Vektor a;
+            double obim = 0;
+            for (int i = 0; i < br_temena - 1; i++)
+            {
+                a = new Vektor(teme[i], teme[i + 1]);
+                obim += a.duzina();
+            }
+            a = new Vektor(teme[br_temena - 1], teme[0]);
+            obim += a.duzina();
+            return obim;
+        }
+
+        public bool prost()
+        {
+            return true;
         }
     }
 }

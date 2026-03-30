@@ -21,10 +21,12 @@ namespace Polygon___Properties
 
             //Poligon prvi = Poligon.unos();
             //prvi.snimi();
-            Poligon p = Poligon.ucitaj();
-            Poligon.stampa(p);
+            Poligon prvi = Poligon.ucitaj();
+            // prvi.snimi();
+            Poligon.stampa(prvi);
+            Console.WriteLine("obim={0}", prvi.obim());
 
-            Console.ReadKey();
+            Console.Read();
         }
     }
 }
