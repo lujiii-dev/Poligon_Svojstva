@@ -24,7 +24,7 @@ namespace Polygon___Properties
             Poligon prvi = Poligon.ucitaj();
             // prvi.snimi();
             Poligon.stampa(prvi);
-            Console.WriteLine("obim={0}", prvi.obim());
+            Console.WriteLine("obim = {0}", prvi.obim());
 
             Console.Read();
         }
