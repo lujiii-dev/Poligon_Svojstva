@@ -126,5 +126,25 @@ namespace Polygon___Properties
             }
             return true;
         }
+        public bool tackaUnutar(Tacka P)
+        {
+            int brojPreseka = 0;
+            
+            for (int i = 0; i < br_temena; i++)
+            {
+                    Tacka A = teme[i];
+                    Tacka B = teme[(i + 1) % br_temena];
+                    if ((A.y <= P.y && B.y > P.y) || (B.y <= P.y && A.y > P.y))
+                    {
+                        float t = (P.y - A.y) / (B.y - A.y);
+                        float xPresek = A.x + t * (B.x - A.x);
+                        if (P.x < xPresek)
+                        {
+                            brojPreseka++;
+                        }
+                    }
+            }
+            return (brojPreseka % 2) != 0;
+        }
     }
 }
