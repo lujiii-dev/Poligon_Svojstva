@@ -146,5 +146,57 @@ namespace Polygon___Properties
             }
             return (brojPreseka % 2) != 0;
         }
+        public bool proveriDeltoid()
+        {
+            if (br_temena != 4) return false;
+
+            Vektor[] stranice = new Vektor[4];
+            stranice[0] = new Vektor(teme[0], teme[1]);
+            stranice[1] = new Vektor(teme[1], teme[2]);
+            stranice[2] = new Vektor(teme[2], teme[3]);
+            stranice[3] = new Vektor(teme[3], teme[0]);
+
+            double[] duzine = new double[4];
+            for (int i = 0; i < 4; i++)
+            {
+                duzine[i] = stranice[i].duzina();
+            }
+
+            return (duzine[0] == duzine[2] && duzine[1] == duzine[3]);
+        }
+        public bool proveriPravougaonik()
+        {
+            if (br_temena != 4) return false;
+
+            Vektor[] stranice = new Vektor[4];
+            stranice[0] = new Vektor(teme[0], teme[1]);
+            stranice[1] = new Vektor(teme[1], teme[2]);
+            stranice[2] = new Vektor(teme[2], teme[3]);
+            stranice[3] = new Vektor(teme[3], teme[0]);
+
+            if (Vektor.SP(stranice[0], stranice[1]) == 0 &&
+                Vektor.SP(stranice[1], stranice[2]) == 0 &&
+                Vektor.SP(stranice[2], stranice[3]) == 0)
+                return true;
+            else return false;
+        }
+        public bool proveriPravougliTrapez()
+        {
+            if (br_temena != 4) return false;
+
+            Vektor[] stranice = new Vektor[4];
+            stranice[0] = new Vektor(teme[0], teme[1]);
+            stranice[1] = new Vektor(teme[1], teme[2]);
+            stranice[2] = new Vektor(teme[2], teme[3]);
+            stranice[3] = new Vektor(teme[3], teme[0]);
+
+            int brojac = 0;
+
+            for (int i = 0; i < 3; i++)
+                if (Vektor.SP(stranice[i], stranice[i + 1]) == 0) brojac++;
+
+            if (brojac == 2) return true;
+            else return false;
+        }
     }
 }

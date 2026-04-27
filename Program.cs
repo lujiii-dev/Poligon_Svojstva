@@ -21,15 +21,17 @@ namespace Polygon___Properties
 
             //Poligon prvi = Poligon.unos();
             //prvi.snimi();
-            Poligon prvi = Poligon.ucitaj();
+            //Poligon prvi = Poligon.ucitaj();
             // prvi.snimi();
-            Poligon.stampa(prvi);
-            Console.WriteLine("obim = {0}", prvi.obim());
+            //Poligon.stampa(prvi);
+            //Console.WriteLine("obim = {0}", prvi.obim());
             
-            Tacka testTacka = new Tacka(3, 3);
+            //Tacka testTacka = new Tacka(3, 3);
             
-            Console.WriteLine("Tacka unutar: {0}", prvi.tackaunutar(testTacka));
-            Console.Read();
+            //Console.WriteLine("Tacka unutar: {0}", prvi.tackaUnutar(testTacka));
+            //Console.Read();
+
+
         }
     }
 }
