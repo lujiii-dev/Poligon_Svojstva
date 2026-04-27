@@ -208,10 +208,9 @@ namespace Polygon___Properties
             int brojac = 0;
 
             for (int i = 0; i < 4; i++)
-                if (Vektor.SP(stranice[i], stranice[(i + 1) % 3]) == 0) brojac++;
+                if (Vektor.SP(stranice[i], stranice[(i + 1) % 4]) == 0) brojac++;
 
-            if (brojac == 2) return true;
-            else return false;
+            return brojac == 2;
         }
     }
 }
