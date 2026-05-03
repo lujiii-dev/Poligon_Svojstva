@@ -72,13 +72,6 @@ namespace Polygon___Properties
             }
         }
 
-        public static float VP(Vektor a, Vektor b)
-        {
-            Tacka aC = a.Centriraj();
-            Tacka bC = b.Centriraj();
-            return aC.x + bC.y - bC.x + aC.y;
-        }
-
         public double obim()
         {
             Vektor a;
